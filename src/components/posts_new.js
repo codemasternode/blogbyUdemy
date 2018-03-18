@@ -12,14 +12,21 @@ class PostsNew extends React.Component {
                     type="text"
                     {...field.input}
                 />
-                {field.meta.data}
+                {field.meta.error}
             </div>
         )
     }
 
+    onSubmit(values) {
+        console.log(values)
+    }
+
     render() {
+
+        const { handleSubmit } = this.props
+
         return (
-            <form>
+            <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <Field
                     label="Title"
                     name="title"
@@ -48,8 +55,8 @@ function validate(values) {
         errors.title = "Enter a title!!!"
     }
 
-    if (!values.categories) {
-        errors.categories = "Enter some categories"
+    if (!values.tags) {
+        errors.tags = "Enter some tags !!!"
     }
 
     if (!values.content) {
