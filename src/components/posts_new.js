@@ -12,7 +12,10 @@ class PostsNew extends React.Component {
                     type="text"
                     {...field.input}
                 />
-                {field.meta.error}
+
+                {field.meta.touched ?
+                    <div className="error">{field.meta.error}</div> :
+                    ''}
             </div>
         )
     }
@@ -42,7 +45,7 @@ class PostsNew extends React.Component {
                     name="content"
                     component={this.renderField}
                 />
-                <button type="submit" className="btn btn-primary">Submit!!!</button>
+                <button type="submit" className="btn btn-primary">Submit</button>
             </form>
         )
     }
