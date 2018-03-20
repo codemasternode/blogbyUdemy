@@ -13,3 +13,10 @@
 form {
     margin-top: 1em;
 }
+
+.text-help {
+    color: rgb(231, 8, 8);
+}
+form a{
+    margin-left: 20px;
+}
