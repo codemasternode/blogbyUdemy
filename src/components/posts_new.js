@@ -21,13 +21,14 @@ class PostsNew extends React.Component {
                 <div className="text-help">
                     {touched ? error : ''}
                 </div>
-
             </div>
         )
     }
 
     onSubmit(values) {
-        this.props.createPost(values);
+        this.props.createPost(values, () => {
+            this.props.history.push('/');
+        });
     }
 
     render() {
@@ -81,4 +82,4 @@ export default reduxForm({
     form: 'PostsNewForm'
 })(
     connect(null, { createPost })(PostsNew)
-);
+    );
