@@ -9,7 +9,7 @@ const API_KEY = '?key=marwar123'
 export function fetchPosts() {
 
     const request = axios.get(`${ROOT_URL}/posts${API_KEY}`)
-
+    
     return {
         type: FETCH_POSTS,
         payload: request
@@ -28,7 +28,6 @@ export function createPost(values, callback) {
 
 export function fetchPost(id) {
     const request = axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`)
-
     return {
         type: FETCH_POST,
         payload: request
